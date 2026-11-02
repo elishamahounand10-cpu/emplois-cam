@@ -1,0 +1,21 @@
+{
+  "id": "./?espace=entreprise",
+  "name": "Emploi Cam — Espace entreprise",
+  "short_name": "Emploi Cam Recruteur",
+  "description": "L'espace entreprise d'Emploi Cam pour vérifier son profil et proposer des offres.",
+  "lang": "fr-CM",
+  "start_url": "./?espace=entreprise",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f7f4",
+  "theme_color": "#f5f7f4",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

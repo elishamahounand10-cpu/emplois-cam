@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#446b74"/>
+      <stop offset=".46" stop-color="#9d927d"/>
+      <stop offset="1" stop-color="#253c3c"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="800" y1="220" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#264244"/>
+      <stop offset="1" stop-color="#152a2c"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="1212" y1="80" x2="1212" y2="310" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#edc47a"/>
+      <stop offset="1" stop-color="#d58254"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1600v600H0z"/>
+  <circle cx="1212" cy="199" r="115" fill="url(#sun)" opacity=".8"/>
+  <path fill="#d9d4c3" d="M0 155 167 119l146 43 171-90 143 84 127-58 151 49 116-36 125 73 190-71 264 64v192H0z" opacity=".19"/>
+  <path fill="#20383a" d="M0 307h64V211h38v96h43V168h66v139h53v-73h41v73h72V129h74v178h48v-89h52v89h47V174h81v133h51v-57h44v57h62V118h91v189h47V189h72v118h49v-66h48v66h45V156h72v151h70V197h58v110h75v293H0z"/>
+  <path fill="#2b4747" d="M0 355h121V265h56v90h77V218h87v137h80v-73h75v73h63V244h73v111h61v-57h47v57h68v-95h79v95h67V246h73v109h77v-57h62v57h54v-85h71v85h69v245H0z"/>
+  <path fill="url(#ground)" d="M0 401h104v-31h71v31h93v-47h90v47h63v-27h82v27h78v-60h91v60h58v-37h62v37h76v-49h89v49h59v-28h82v28h81v-48h93v48h92v199H0z"/>
+  <g fill="#eacb8b" opacity=".68">
+    <path d="M75 236h11v18H75zm37 0h11v18h-11zM164 188h12v17h-12zm27 0h12v17h-12zm-27 31h12v17h-12zm27 0h12v17h-12zM348 148h13v20h-13zm32 0h13v20h-13zm-32 35h13v20h-13zm32 0h13v20h-13zM438 247h13v19h-13zm29 0h13v19h-13zm-29 33h13v19h-13zm29 0h13v19h-13zM655 208h13v19h-13zm30 0h13v19h-13zm-30 34h13v19h-13zm30 0h13v19h-13zM833 150h13v20h-13zm32 0h13v20h-13zm-32 36h13v20h-13zm32 0h13v20h-13zM1000 223h13v19h-13zm28 0h13v19h-13zm-28 34h13v19h-13zm28 0h13v19h-13zM1210 258h13v19h-13zm31 0h13v19h-13zm-31 34h13v19h-13zm31 0h13v19h-13zM1433 218h13v19h-13zm28 0h13v19h-13zm-28 33h13v19h-13zm28 0h13v19h-13z"/>
+  </g>
+  <path stroke="#eacb8b" stroke-opacity=".35" stroke-width="3" d="m0 443 207-42 202 42 204-38 218 40 177-40 216 45 191-45 185 43"/>
+  <path fill="#f1d59d" fill-opacity=".72" d="m1260 426 340 30v10l-354-28z"/>
+  <circle cx="274" cy="113" r="2" fill="#f4d893"/>
+  <circle cx="752" cy="88" r="2" fill="#f4d893"/>
+  <circle cx="1439" cy="112" r="2" fill="#f4d893"/>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "id": "./?espace=etudiant",
+  "name": "Emploi Cam — Espace étudiant",
+  "short_name": "Emploi Cam Étudiant",
+  "description": "La plateforme de mise en relation entre étudiants et entreprises au Cameroun.",
+  "lang": "fr-CM",
+  "start_url": "./?espace=etudiant",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f7f4",
+  "theme_color": "#f5f7f4",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

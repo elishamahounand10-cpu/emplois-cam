@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f4" />
+    <meta
+      name="description"
+      content="Emploi Cam met en relation les étudiants et les entreprises au Cameroun."
+    />
+    <title>Emploi Cam — Le prochain chapitre commence ici</title>
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <div class="portal-page" id="portal-page" hidden>
+      <div class="portal-government-strip">
+        <span class="cameroon-flag" aria-label="Drapeau du Cameroun"><i></i><i></i><i></i></span>
+        <span>EMPLOI CAMEROUN <span aria-hidden="true">·</span> UNE PLATEFORME POUR TOUS LES TALENTS</span>
+        <a href="#portal-benefits">Découvrir la plateforme <span aria-hidden="true">↗</span></a>
+      </div>
+      <header class="portal-header">
+        <a class="portal-brand" href="#" data-portal-home aria-label="Accueil Emploi Cam">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="14" fill="currentColor"/><path d="M27.5 13.8a11.5 11.5 0 1 0 0 12.4M27.5 20h-8" stroke="#fff" stroke-linecap="round" stroke-width="3.2"/><circle cx="27.5" cy="20" r="2" fill="#d8fb83"/></svg>
+          </span>
+          <span>emploi<span>cam</span></span>
+        </a>
+        <nav class="portal-nav" aria-label="Navigation de la page d'accueil">
+          <a href="#portal-benefits">À propos</a>
+          <a href="#portal-footer">Aide &amp; contact</a>
+        </nav>
+        <nav class="mode-switch portal-mode-switch" aria-label="Choisir votre espace">
+          <button type="button" class="mode-button is-active" data-mode="candidate" aria-pressed="true">Étudiant</button>
+          <button type="button" class="mode-button" data-mode="employer" aria-pressed="false">Entreprise</button>
+        </nav>
+      </header>
+
+      <main class="portal-main">
+        <section class="portal-hero" aria-labelledby="portal-title">
+          <div class="portal-hero-scenery" aria-hidden="true"></div>
+          <div class="portal-login-card">
+            <div class="portal-form-heading">
+              <span class="portal-role-icon student-role-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20v-1.6a6.5 6.5 0 0 1 13 0V20h-13ZM17 4.5a3.2 3.2 0 0 1 0 6.3m1.4 3.3a5 5 0 0 1 2.1 4.1V20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg>
+              </span>
+              <span class="portal-role-icon employer-role-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V6.5A1.5 1.5 0 0 1 5.5 5h13A1.5 1.5 0 0 1 20 6.5V20M2.5 20h19M9 9h1m4 0h1M9 12.5h1m4 0h1M10 20v-3h4v3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg>
+              </span>
+              <div>
+                <p class="portal-form-eyebrow">EMPLOI CAM <span data-portal-role-label>POUR LES ÉTUDIANTS</span></p>
+                <h1 id="portal-title" data-portal-title>Votre carrière commence ici.</h1>
+              </div>
+            </div>
+            <p class="portal-prompt" data-portal-prompt>Ouvrez une session pour accéder à votre espace étudiant.</p>
+
+            <form class="portal-login-form" id="candidate-login-form" novalidate>
+              <label for="student-login-email">Courriel</label>
+              <div class="portal-input-wrap"><span aria-hidden="true">@</span><input id="student-login-email" name="email" type="email" autocomplete="email" required maxlength="120" placeholder="vous@exemple.cm" /></div>
+              <div id="student-password-field" hidden>
+                <label for="student-login-password">Mot de passe</label>
+                <div class="portal-input-wrap"><span aria-hidden="true">●</span><input id="student-login-password" name="password" type="password" autocomplete="current-password" maxlength="128" placeholder="Mot de passe" /></div>
+              </div>
+              <button class="portal-submit student-submit" id="student-login-submit" type="submit">Suivant <span aria-hidden="true">→</span></button>
+              <p class="portal-feedback" id="student-login-feedback" role="status" hidden></p>
+              <p class="portal-demo-warning">Connexion de démonstration : aucun compte n'est vérifié et vos identifiants ne sont ni envoyés ni enregistrés. N'utilisez pas votre vrai mot de passe.</p>
+              <div class="portal-register-row"><span>Pas encore de compte ?</span><button type="button" data-action="register-candidate">Créer un compte étudiant</button></div>
+            </form>
+
+            <form class="portal-login-form" id="employer-login-form" novalidate hidden>
+              <label for="employer-login-email">Courriel professionnel <span class="required-label">(obligatoire)</span></label>
+              <div class="portal-input-wrap"><span aria-hidden="true">@</span><input id="employer-login-email" name="email" type="email" autocomplete="email" required maxlength="120" placeholder="nom@entreprise.cm" /></div>
+              <label for="employer-login-password">Mot de passe <span class="required-label">(obligatoire)</span></label>
+              <div class="portal-input-wrap"><span aria-hidden="true">●</span><input id="employer-login-password" name="password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Mot de passe" /></div>
+              <button class="portal-submit employer-submit" type="submit"><span aria-hidden="true">↪</span> Ouvrir une session</button>
+              <p class="portal-feedback" id="employer-login-feedback" role="status" hidden></p>
+              <button class="portal-forgot-link" type="button" data-action="forgot-password">Mot de passe oublié ?</button>
+              <div class="portal-register-row"><span>Vous représentez une entreprise ?</span><button type="button" data-action="register-employer">Créer un compte entreprise</button></div>
+              <div class="portal-security-note"><span aria-hidden="true">i</span><span>En production, un contrôle du domaine et des coordonnées de l'entreprise sera requis avant toute publication.</span></div>
+              <p class="portal-demo-warning">Connexion de démonstration uniquement : aucun compte n'est vérifié, aucun mot de passe n'est envoyé ou enregistré. N'utilisez pas un vrai mot de passe.</p>
+            </form>
+          </div>
+          <div class="portal-hero-caption"><span class="portal-live-dot"></span><span>Étudiants et employeurs, réunis au Cameroun.</span></div>
+        </section>
+
+        <section class="portal-benefits" id="portal-benefits" aria-labelledby="portal-benefits-title">
+          <div class="portal-benefit-icon student-benefit-icon" aria-hidden="true"><span>▣</span></div>
+          <div class="portal-benefit-icon employer-benefit-icon" aria-hidden="true"><span>▤</span></div>
+          <div class="portal-benefit-copy" data-portal-benefits="candidate">
+            <p class="portal-section-eyebrow">L'AVENTURE EMPLOI CAM</p>
+            <h2 id="portal-benefits-title">À la recherche d'un avenir professionnel ?</h2>
+            <p class="portal-benefit-lead">Accédez gratuitement à des outils qui vous rapprochent des bonnes opportunités.</p>
+            <ul class="portal-check-list">
+              <li><span aria-hidden="true">✓</span> Découvrez des stages et emplois adaptés à votre profil.</li>
+              <li><span aria-hidden="true">✓</span> Enregistrez vos offres favorites et suivez leur échéance.</li>
+              <li><span aria-hidden="true">✓</span> Préparez votre profil étudiant et votre candidature.</li>
+            </ul>
+            <button type="button" class="button button-dark portal-create-account" data-action="register-candidate">Créer mon compte étudiant <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="portal-benefit-copy" data-portal-benefits="employer" hidden>
+            <p class="portal-section-eyebrow">L'AVENTURE EMPLOI CAM</p>
+            <h2>Recrutez des talents camerounais.</h2>
+            <p class="portal-benefit-lead">Préparez vos offres et suivez vos recrutements dans un espace dédié aux employeurs.</p>
+            <ul class="portal-check-list">
+              <li><span aria-hidden="true">✓</span> Présentez votre entreprise avec des coordonnées vérifiables.</li>
+              <li><span aria-hidden="true">✓</span> Rédigez des offres claires et fixez leur date d'expiration.</li>
+              <li><span aria-hidden="true">✓</span> Suivez les postes restants et vos propositions en attente.</li>
+            </ul>
+            <button type="button" class="button button-dark portal-create-account" data-action="register-employer">Créer mon compte entreprise <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="portal-demo-access">
+            <span>Vous souhaitez simplement découvrir la maquette ?</span>
+            <button type="button" data-action="show-app">Continuer sans compte <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+        <section class="portal-extra-links" data-portal-benefits="employer">
+          <h2>Ressources pour les employeurs</h2>
+          <p>Les offres publiques ne seront accessibles qu'après vérification de l'entreprise et approbation de l'annonce.</p>
+          <button type="button" class="portal-inline-link" data-action="show-app">Découvrir l'espace de recrutement <span aria-hidden="true">↗</span></button>
+        </section>
+      </main>
+      <footer class="portal-footer" id="portal-footer">
+        <div><strong>Emploi Cam</strong><a href="#portal-benefits">À propos</a><a href="#portal-footer">Aide &amp; contact</a></div>
+        <div><span>Projet pour les étudiants et les entreprises du Cameroun.</span><span>Politique de confidentialité · © 2026 Emploi Cam</span></div>
+      </footer>
+    </div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Accueil de votre espace Emploi Cam" data-brand-home>
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="14" fill="currentColor" />
+              <path
+                d="M27.5 13.8a11.5 11.5 0 1 0 0 12.4M27.5 20h-8"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-width="3.2"
+              />
+              <circle cx="27.5" cy="20" r="2" fill="#d8fb83" />
+            </svg>
+          </span>
+          <span class="brand-name">emploi<span>cam</span></span>
+        </a>
+
+        <form class="top-search" id="top-search" role="search">
+          <label class="sr-only" for="top-query">Rechercher une offre ou une entreprise</label>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8" />
+            <path d="m16 16 4 4" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+          </svg>
+          <input id="top-query" name="query" placeholder="Métier, compétence ou entreprise" />
+          <kbd>/</kbd>
+        </form>
+
+        <nav class="mode-switch" aria-label="Choisir votre espace">
+          <button type="button" class="mode-button is-active" data-mode="candidate" aria-pressed="true">Étudiant</button>
+          <button type="button" class="mode-button" data-mode="employer" aria-pressed="false">Entreprise</button>
+        </nav>
+
+        <div class="top-actions">
+          <button class="portal-entry-button" type="button" data-action="show-portal">Connexion <span aria-hidden="true">→</span></button>
+          <button class="icon-button notification-button" type="button" data-action="notifications" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" />
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+          <button class="profile-button" type="button" data-action="profile" data-profile-role="candidate" aria-label="Modifier mon profil étudiant">
+            <span class="avatar" id="header-avatar">A</span>
+            <span class="profile-button-label" id="header-name">Mon profil</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="m4 6 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
+            </svg>
+          </button>
+          <button class="profile-button employer-profile-button" type="button" data-action="company-profile" aria-label="Modifier le profil entreprise">
+            <span class="avatar" id="company-header-avatar">E</span>
+            <span class="profile-button-label" id="company-header-name">Mon entreprise</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="m4 6 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="app-body">
+        <aside class="sidebar" aria-label="Navigation principale">
+          <div data-space="candidate">
+          <div class="sidebar-group">
+            <p class="sidebar-label">Découvrir</p>
+            <nav class="side-nav">
+              <button class="nav-link is-active" type="button" data-view="all">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7" /><rect x="3.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7" /><rect x="13.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.7" /></svg>
+                <span>Pour vous</span>
+                <span class="nav-count">9</span>
+              </button>
+              <button class="nav-link" type="button" data-view="stage">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5" stroke="currentColor" stroke-width="1.7" /><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7m-13 5h18m-11 0v2h4v-2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" /></svg>
+                <span>Stages</span>
+              </button>
+              <button class="nav-link" type="button" data-view="emploi">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V8l8-5 8 5v12M8 20v-6h8v6M4 9l8 5 8-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" /></svg>
+                <span>Emplois</span>
+              </button>
+              <button class="nav-link" type="button" data-view="alternance">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7.5 12 4l8 3.5-8 3.5-8-3.5ZM6 10v5.5c3.5 3 8.5 3 12 0V10m2-2.5v7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" /></svg>
+                <span>Alternance</span>
+              </button>
+            </nav>
+          </div>
+
+          <div class="sidebar-group">
+            <p class="sidebar-label">Mon espace</p>
+            <nav class="side-nav">
+              <button class="nav-link" type="button" data-view="saved">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-4-6 4V4.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" /></svg>
+                <span>Enregistrés</span>
+                <span class="nav-count" id="saved-count">0</span>
+              </button>
+              <button class="nav-link" type="button" data-view="applied">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" /></svg>
+                <span>Mes candidatures</span>
+              </button>
+            </nav>
+          </div>
+
+          <section class="profile-progress candidate-profile-progress">
+            <div class="progress-heading">
+              <span class="progress-icon" aria-hidden="true">✦</span>
+              <span>Mon profil</span>
+              <span class="progress-value" id="profile-progress-value">35%</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="Profil complété" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+              <span id="profile-progress-bar"></span>
+            </div>
+            <p id="profile-progress-copy">Un profil complet vous aide à vous démarquer.</p>
+            <button type="button" class="text-button" data-action="profile">Compléter mon profil <span aria-hidden="true">↗</span></button>
+            <button type="button" class="text-button verification-link" data-action="student-verification">Vérifier mon statut étudiant <span aria-hidden="true">↗</span></button>
+          </section>
+          </div>
+
+          <div class="employer-sidebar" data-space="employer" hidden>
+            <p class="sidebar-label">Espace entreprise</p>
+            <nav class="side-nav">
+              <button class="nav-link is-active" type="button" data-employer-view="dashboard"><span aria-hidden="true">▦</span><span>Tableau de bord</span></button>
+              <button class="nav-link" type="button" data-employer-view="offers"><span aria-hidden="true">▤</span><span>Mes offres</span><span class="nav-count" id="company-offer-count">0</span></button>
+              <button class="nav-link" type="button" data-action="company-profile"><span aria-hidden="true">◎</span><span>Profil vérifié</span></button>
+            </nav>
+            <section class="profile-progress company-status-card">
+              <div class="progress-heading"><span class="progress-icon" aria-hidden="true">✓</span><span>Vérification</span></div>
+              <p id="company-verification-summary">À compléter avant de publier une offre.</p>
+              <button type="button" class="text-button" data-action="company-profile">Vérifier mon entreprise <span aria-hidden="true">↗</span></button>
+            </section>
+          </div>
+
+          <div class="sidebar-bottom">
+            <span class="online-indicator"></span>
+            <span>La plateforme qui fait avancer</span>
+          </div>
+        </aside>
+
+        <main class="main-content" id="main-content">
+          <div data-space="candidate">
+          <section class="welcome-banner" aria-labelledby="welcome-title">
+            <div class="welcome-copy">
+              <span class="eyebrow"><span class="eyebrow-sparkle">✳</span> LA RENCONTRE QUI CHANGE TOUT</span>
+              <h1 id="welcome-title">Votre prochain chapitre<br />commence <span>ici.</span></h1>
+              <p>Les bonnes opportunités n'attendent pas. Trouvez celle qui vous ressemble.</p>
+              <form class="hero-search" id="hero-search" role="search">
+                <label class="sr-only" for="hero-query">Quel métier recherchez-vous ?</label>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8" /><path d="m16 16 4 4" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" /></svg>
+                <input id="hero-query" name="query" placeholder="Ex. développeur, marketing, comptabilité..." />
+                <button class="button button-dark" type="submit">Rechercher <span aria-hidden="true">→</span></button>
+              </form>
+              <div class="popular-searches">
+                <span>Populaires :</span>
+                <button type="button" data-search="Développement">Développement</button>
+                <button type="button" data-search="Marketing">Marketing</button>
+                <button type="button" data-search="Comptabilité">Comptabilité</button>
+              </div>
+            </div>
+            <div class="welcome-art" aria-hidden="true">
+              <div class="sun-disc"></div>
+              <div class="art-orbit orbit-one"></div>
+              <div class="art-orbit orbit-two"></div>
+              <div class="art-sparkle sparkle-one">✳</div>
+              <div class="art-sparkle sparkle-two">✦</div>
+              <div class="art-card art-card-back">
+                <span class="art-card-icon">↗</span>
+                <span class="art-card-line"></span>
+                <span class="art-card-line short"></span>
+              </div>
+              <div class="art-person">
+                <div class="person-hair"></div>
+                <div class="person-face"></div>
+                <div class="person-body"></div>
+                <div class="person-folder">✓</div>
+              </div>
+              <div class="art-note"><span>+1</span> belle opportunité</div>
+            </div>
+            <span class="banner-index" aria-hidden="true">01 / 03</span>
+          </section>
+
+          <section class="discovery-section" aria-labelledby="section-title">
+            <div class="section-heading">
+              <div>
+                <div class="section-kicker"><span class="live-dot"></span> MIS À JOUR RÉCEMMENT</div>
+                <h2 id="section-title">Des opportunités pour vous <span class="heading-sparkle">✳</span></h2>
+                <p class="section-description" id="results-summary">Des offres choisies pour votre prochain défi.</p>
+              </div>
+              <span class="verified-only-note">Offres publiées après vérification</span>
+            </div>
+
+            <div class="filter-row">
+              <div class="filter-chips" role="group" aria-label="Filtrer par type d'opportunité">
+                <button class="filter-chip is-selected" type="button" data-kind="all" aria-pressed="true">Tout voir <span>9</span></button>
+                <button class="filter-chip" type="button" data-kind="stage" aria-pressed="false">Stage</button>
+                <button class="filter-chip" type="button" data-kind="emploi" aria-pressed="false">Emploi</button>
+                <button class="filter-chip" type="button" data-kind="alternance" aria-pressed="false">Alternance</button>
+              </div>
+              <label class="location-filter">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 8.3c0 4.2-6 9-6 9s-6-4.8-6-9a6 6 0 1 1 12 0Z" stroke="currentColor" stroke-width="1.5" /><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.5" /></svg>
+                <span class="sr-only">Filtrer par ville</span>
+                <select id="location-filter" aria-label="Filtrer par ville">
+                  <option value="all">Toutes les villes</option>
+                  <option value="Douala">Douala</option>
+                  <option value="Yaoundé">Yaoundé</option>
+                  <option value="Bafoussam">Bafoussam</option>
+                  <option value="À distance">À distance</option>
+                </select>
+                <svg class="select-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" /></svg>
+              </label>
+            </div>
+
+            <div class="job-grid" id="job-listings" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <span class="empty-state-icon" aria-hidden="true">⌕</span>
+              <h3>Aucune opportunité pour l'instant</h3>
+              <p>Essayez un autre mot-clé ou élargissez votre recherche.</p>
+              <button type="button" class="button button-outline" data-action="reset-filters">Voir toutes les offres</button>
+            </div>
+
+            <div class="demo-note">
+              <span class="demo-note-icon" aria-hidden="true">i</span>
+              <p>Vous explorez une maquette interactive. Les offres affichées sont fictives et les actions restent dans votre navigateur.</p>
+            </div>
+          </section>
+          </div>
+
+          <section class="employer-workspace" data-space="employer" hidden aria-labelledby="employer-title">
+            <div class="employer-welcome">
+              <span class="eyebrow"><span class="eyebrow-sparkle">✳</span> ESPACE RECRUTEUR</span>
+              <h1 id="employer-title">Les bons talents commencent par la <span>confiance.</span></h1>
+              <p>Vérifiez votre entreprise pour publier des offres consultables par les étudiants.</p>
+              <button type="button" class="button button-dark" data-action="company-profile">Configurer mon entreprise <span aria-hidden="true">→</span></button>
+            </div>
+            <section class="employer-verification-card" aria-labelledby="employer-verification-title">
+              <div class="verification-card-icon" aria-hidden="true">✓</div>
+              <div class="verification-card-content">
+                <span class="rail-eyebrow">AVANT LA PUBLICATION</span>
+                <h2 id="employer-verification-title">Faites vérifier votre entreprise</h2>
+                <p id="company-verification-detail">Un e-mail professionnel, un site web et des coordonnées permettent à notre équipe de vérifier l'entreprise avant toute publication.</p>
+              </div>
+              <button type="button" class="button button-outline" data-action="company-profile">Démarrer la vérification</button>
+            </section>
+            <div class="employer-stats" aria-label="Statistiques des offres">
+              <article class="employer-stat"><span class="rail-eyebrow">MES OFFRES</span><strong id="company-total-count">0</strong><span>Propositions enregistrées</span></article>
+              <article class="employer-stat"><span class="rail-eyebrow">EN VÉRIFICATION</span><strong id="company-pending-count">0</strong><span>En attente d'approbation</span></article>
+              <article class="employer-stat"><span class="rail-eyebrow">POSTES POURVUS</span><strong id="company-filled-count">0</strong><span>Déclarés par l'entreprise</span></article>
+            </div>
+            <section class="employer-offers" aria-labelledby="employer-offers-title">
+              <div class="employer-section-heading">
+                <div><span class="section-kicker"><span class="live-dot"></span> SUIVI DU RECRUTEMENT</span><h2 id="employer-offers-title">Mes offres</h2></div>
+                <button type="button" class="button button-dark" data-action="publish"><span class="plus-icon" aria-hidden="true">+</span> Proposer une offre</button>
+              </div>
+              <div id="company-offer-list" class="company-offer-list"></div>
+              <p id="company-empty-state" class="company-empty-state">Vos propositions et leurs statuts apparaîtront ici.</p>
+              <div class="local-data-notice"><span aria-hidden="true">i</span> Démonstration : seule une équipe de vérification connectée au serveur pourra approuver les pièces et publier réellement une offre.</div>
+            </section>
+          </section>
+        </main>
+
+        <aside class="right-rail" data-space="candidate" aria-label="Conseils et informations">
+          <section class="rail-card profile-card">
+            <div class="rail-card-heading">
+              <div>
+                <p class="rail-eyebrow">VOTRE ESPACE</p>
+                <h2>Faites bonne impression</h2>
+              </div>
+              <span class="rail-decoration" aria-hidden="true">✳</span>
+            </div>
+            <p class="rail-copy">Aidez les recruteurs à mieux vous connaître en complétant votre profil.</p>
+            <div class="profile-preview">
+              <span class="preview-avatar" id="rail-avatar">A</span>
+              <div><strong id="rail-name">Votre profil étudiant</strong><span id="rail-role">Ajoutez votre spécialité</span></div>
+              <span class="profile-check" aria-label="Profil à compléter">↗</span>
+            </div>
+            <button type="button" class="button button-dark button-full" data-action="profile">Compléter mon profil <span aria-hidden="true">→</span></button>
+            <div class="privacy-hint"><span aria-hidden="true">⌑</span> Vos informations restent sur cet appareil.</div>
+          </section>
+
+          <section class="rail-card tip-card">
+            <div class="tip-icon" aria-hidden="true">✦</div>
+            <p class="rail-eyebrow">LE CONSEIL DU JOUR</p>
+            <h2>Un CV clair ouvre des portes.</h2>
+            <p class="rail-copy">Mettez en avant vos projets et vos compétences, même sans longue expérience.</p>
+            <button type="button" class="tip-link" data-action="profile">Améliorer mon profil <span aria-hidden="true">↗</span></button>
+            <div class="tip-decoration" aria-hidden="true">✳</div>
+          </section>
+
+          <section class="help-card">
+            <span class="help-icon" aria-hidden="true">?</span>
+            <div><strong>Un projet pour votre avenir</strong><p>Une plateforme pensée pour les étudiants et les entreprises du Cameroun.</p></div>
+          </section>
+          <footer class="rail-footer">À propos <span>·</span> Aide <span>·</span> Confidentialité<br />© 2026 Emploi Cam · Démonstration</footer>
+        </aside>
+      </div>
+    </div>
+
+    <nav class="mobile-nav candidate-mobile-nav" data-space="candidate" aria-label="Navigation mobile">
+      <button type="button" class="mobile-nav-link is-active" data-view="all"><span aria-hidden="true">⌂</span>Accueil</button>
+      <button type="button" class="mobile-nav-link" data-view="stage"><span aria-hidden="true">▣</span>Stages</button>
+      <button type="button" class="mobile-nav-link" data-view="saved"><span aria-hidden="true">♡</span>Enregistrés</button>
+      <button type="button" class="mobile-nav-link" data-action="profile"><span aria-hidden="true">◉</span>Profil</button>
+    </nav>
+    <nav class="mobile-nav employer-mobile-nav" data-space="employer" aria-label="Navigation entreprise" hidden>
+      <button type="button" class="mobile-nav-link is-active" data-employer-view="dashboard"><span aria-hidden="true">▦</span>Accueil</button>
+      <button type="button" class="mobile-nav-link" data-employer-view="offers"><span aria-hidden="true">▤</span>Mes offres</button>
+      <button type="button" class="mobile-nav-link" data-action="company-profile"><span aria-hidden="true">✓</span>Vérification</button>
+      <button type="button" class="mobile-nav-link" data-action="publish"><span aria-hidden="true">+</span>Publier</button>
+    </nav>
+
+    <dialog class="app-dialog" id="apply-dialog" aria-labelledby="apply-title">
+      <form class="dialog-form" id="apply-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">CANDIDATURE</span>
+        <h2 id="apply-title">Cette opportunité vous parle ?</h2>
+        <p class="dialog-description" id="apply-job-title"></p>
+        <div class="form-grid">
+          <label>Votre nom<input name="name" autocomplete="name" required maxlength="80" placeholder="Ex. Alex M." /></label>
+          <label>Votre adresse e-mail<input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="vous@exemple.com" /></label>
+          <label class="full-field">Quelques mots sur votre motivation<textarea name="message" rows="3" maxlength="500" placeholder="Présentez brièvement votre intérêt pour cette offre."></textarea></label>
+        </div>
+        <div class="local-data-notice"><span aria-hidden="true">i</span> Démonstration : votre candidature ne sera pas envoyée à une entreprise. Seul le suivi de l'offre est conservé sur cet appareil.</div>
+        <button class="button button-dark button-full" type="submit">Enregistrer ma candidature <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog offer-dialog" id="offer-dialog" aria-labelledby="offer-detail-title">
+      <div class="dialog-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <div class="offer-company-heading">
+          <span class="company-logo logo-sage" id="detail-company-logo" aria-hidden="true">EC</span>
+          <div><span class="dialog-kicker">DÉTAIL DE L'OFFRE</span><p class="offer-company-name" id="detail-company"></p></div>
+        </div>
+        <h2 id="offer-detail-title"></h2>
+        <div class="offer-detail-badges" id="detail-badges"></div>
+        <section class="offer-countdown-panel">
+          <span>Clôture des candidatures</span>
+          <strong id="offer-detail-countdown" aria-live="polite"></strong>
+          <span id="offer-detail-expiry-date"></span>
+        </section>
+        <div class="offer-detail-meta" id="detail-meta"></div>
+        <section class="detail-section">
+          <h3>À propos de l'entreprise</h3><p id="detail-company-description"></p>
+        </section>
+        <section class="detail-section">
+          <h3>Description du poste</h3><p id="detail-description"></p>
+        </section>
+        <section class="detail-section">
+          <h3>Responsabilités</h3><ul id="detail-responsibilities"></ul>
+        </section>
+        <section class="detail-section">
+          <h3>Profil recherché</h3><p id="detail-requirements"></p>
+        </section>
+        <section class="detail-section employer-contact-section" id="detail-contact-section">
+          <h3>Contacter l'entreprise</h3><div id="detail-contacts"></div>
+        </section>
+        <div class="local-data-notice"><span aria-hidden="true">i</span> Offre de démonstration. Un badge de vérification authentique ne peut être délivré que par une vérification serveur.</div>
+        <div class="offer-detail-actions">
+          <button class="button button-outline" type="button" id="detail-save-button" data-save-current><span aria-hidden="true">♡</span> Ajouter aux favoris</button>
+          <button class="button button-dark" type="button" id="detail-apply-button">Postuler <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="app-dialog" id="profile-dialog" aria-labelledby="profile-title">
+      <form class="dialog-form" id="profile-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">MON ESPACE</span>
+        <h2 id="profile-title">Présentez-vous en quelques mots.</h2>
+        <p class="dialog-description">Créez un profil de démonstration pour personnaliser votre expérience.</p>
+        <div class="form-grid">
+          <label>Nom affiché<input name="name" autocomplete="name" maxlength="60" placeholder="Ex. Alex M." /></label>
+          <label>Ville<select name="city"><option value="">Choisir une ville</option><option>Douala</option><option>Yaoundé</option><option>Bafoussam</option><option>Autre</option></select></label>
+          <label class="full-field">Spécialité ou domaine<input name="role" maxlength="80" placeholder="Ex. Étudiant en informatique" /></label>
+          <label class="full-field">Compétences<textarea name="skills" rows="2" maxlength="200" placeholder="Ex. Développement web, communication, Excel"></textarea></label>
+        </div>
+        <div class="student-verification-status" id="student-verification-status"></div>
+        <button class="button button-outline button-full student-verification-button" type="button" data-action="student-verification">Vérifier mon statut étudiant</button>
+        <p class="form-footnote">Les informations de profil sont conservées dans le stockage local. Les documents officiels ne sont jamais enregistrés dans cette maquette.</p>
+        <button class="button button-dark button-full" type="submit">Enregistrer mon profil <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog" id="student-verification-dialog" aria-labelledby="student-verification-title">
+      <form class="dialog-form" id="student-verification-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">VÉRIFICATION ÉTUDIANTE</span>
+        <h2 id="student-verification-title">Confirmez votre statut étudiant.</h2>
+        <p class="dialog-description">Dans cette maquette, votre demande reste en attente : les pièces ne sont jamais téléversées et seul un serveur sécurisé pourra les vérifier.</p>
+        <div class="form-grid">
+          <label>Établissement<input name="school" required maxlength="120" placeholder="Nom de votre établissement" /></label>
+          <label>Téléphone mobile<input name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="(?:\+?237)?6[0-9]{8}" required placeholder="+237 6XX XXX XXX" title="Saisissez un numéro mobile camerounais valide de 9 chiffres." /></label>
+          <label class="full-field">Certificat de scolarité (PDF ou image)<input name="certificate" type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" required /></label>
+          <label class="full-field">Carte scolaire (PDF ou image)<input name="student-card" type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" required /></label>
+        </div>
+        <div class="local-data-notice"><span aria-hidden="true">!</span> Ne joignez pas de document réel : aucun transfert sécurisé n'est configuré. Le choix des fichiers sert uniquement à prévisualiser le formulaire.</div>
+        <button class="button button-dark button-full" type="submit">Soumettre à vérification <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog" id="company-verification-dialog" aria-labelledby="company-verification-dialog-title">
+      <form class="dialog-form" id="company-verification-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">ESPACE ENTREPRISE</span>
+        <h2 id="company-verification-dialog-title">Vérifiez votre entreprise avant de publier.</h2>
+        <p class="dialog-description">Ces renseignements aideront une équipe habilitée à contrôler l'identité et les coordonnées de l'employeur.</p>
+        <div class="form-grid">
+          <label class="full-field">Nom légal de l'entreprise<input name="name" required maxlength="120" autocomplete="organization" placeholder="Nom déclaré de l'entreprise" /></label>
+          <label>Courriel professionnel<input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="nom@entreprise.cm" /></label>
+          <label>Site officiel<input name="website" type="url" required maxlength="200" placeholder="https://entreprise.cm" /></label>
+          <label class="full-field">Adresse de la direction<input name="address" required maxlength="200" autocomplete="street-address" placeholder="Rue, quartier, ville et région" /></label>
+          <label>Téléphone de l'entreprise<input name="phone" type="tel" inputmode="tel" pattern="(?:\+?237)?[26][0-9]{8}" required placeholder="+237 2XX XXX XXX" title="Saisissez un numéro camerounais valide de 9 chiffres." /></label>
+          <label>Service client<input name="supportPhone" type="tel" inputmode="tel" pattern="(?:\+?237)?[26][0-9]{8}" required placeholder="+237 6XX XXX XXX" title="Saisissez un numéro camerounais valide de 9 chiffres." /></label>
+          <label class="full-field">Référence du registre de commerce (RCCM)<input name="registration" required maxlength="80" placeholder="Ex. RCCM/DLA/2026/..." /></label>
+        </div>
+        <div class="verification-status-banner" id="company-verification-form-status"></div>
+        <div class="local-data-notice"><span aria-hidden="true">!</span> Pas d'envoi d'e-mail ni de contrôle de documents dans cette maquette. La demande restera « en attente » ; aucune entreprise ni offre ne sera marquée comme vérifiée automatiquement.</div>
+        <button class="button button-dark button-full" type="submit">Soumettre la demande de vérification <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog" id="publish-dialog" aria-labelledby="publish-title">
+      <form class="dialog-form" id="publish-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">CÔTÉ ENTREPRISE</span>
+        <h2 id="publish-title">Proposez une opportunité.</h2>
+        <p class="dialog-description">Ajoutez une annonce d'exemple à cette démonstration.</p>
+        <div class="form-grid">
+          <label class="full-field">Intitulé du poste<input name="title" required maxlength="90" placeholder="Ex. Assistant·e marketing" /></label>
+          <label>Entreprise<input name="company" required maxlength="70" placeholder="Nom de l'entreprise" /></label>
+          <label>Ville<select name="city" required><option value="">Choisir une ville</option><option>Douala</option><option>Yaoundé</option><option>Bafoussam</option><option>À distance</option></select></label>
+          <label>Type de contrat<select name="kind" required><option value="stage">Stage</option><option value="emploi">Emploi</option><option value="alternance">Alternance</option></select></label>
+          <label>Domaine<input name="category" required maxlength="40" placeholder="Ex. Marketing" /></label>
+          <label>Nombre de postes<input name="positions" type="number" min="1" max="1000" required value="1" /></label>
+          <label>Date limite de candidature<input name="expiresAt" type="date" required /></label>
+          <label>Salaire (facultatif)<input name="salary" maxlength="60" placeholder="Ex. 150 000 FCFA / mois" /></label>
+          <label class="full-field">Description du poste<textarea name="description" rows="4" required maxlength="3000" placeholder="Missions, responsabilités et environnement de travail."></textarea></label>
+          <label class="full-field">Profil recherché<textarea name="requirements" rows="2" required maxlength="1200" placeholder="Formation, compétences et expérience souhaitées."></textarea></label>
+          <label>Courriel de contact<input name="contactEmail" type="email" required maxlength="120" placeholder="recrutement@entreprise.cm" /></label>
+          <label>Téléphone de contact<input name="contactPhone" type="tel" required maxlength="30" placeholder="+237 6XX XXX XXX" /></label>
+        </div>
+        <div class="local-data-notice"><span aria-hidden="true">i</span> Votre offre sera enregistrée en attente de vérification. Elle ne sera pas publiée auprès des candidats avant l'approbation de l'entreprise et de l'annonce.</div>
+        <button class="button button-dark button-full" type="submit">Soumettre l'offre à vérification <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog" id="notifications-dialog" aria-labelledby="notifications-title">
+      <div class="dialog-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">VOTRE ESPACE</span>
+        <h2 id="notifications-title">Notifications</h2>
+        <p class="dialog-description" id="notifications-description">Les nouvelles de votre compte apparaissent ici.</p>
+        <div class="notification-list" id="notification-list"></div>
+        <p class="form-footnote">Cette maquette n'envoie pas de notification push ou de courriel. Une version en production nécessitera un serveur de notifications.</p>
+      </div>
+    </dialog>
+
+    <dialog class="app-dialog" id="hire-dialog" aria-labelledby="hire-title">
+      <form class="dialog-form" id="hire-form">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">SUIVI DU RECRUTEMENT</span>
+        <h2 id="hire-title">Confirmer une embauche ?</h2>
+        <p class="dialog-description" id="hire-description"></p>
+        <div class="local-data-notice"><span aria-hidden="true">i</span> Le nombre de places restantes diminuera uniquement après votre confirmation. Cette action est locale à la démonstration.</div>
+        <button class="button button-dark button-full" type="submit">Confirmer et actualiser les places <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog portal-register-dialog" id="register-candidate-dialog" aria-labelledby="register-candidate-title">
+      <form class="dialog-form portal-register-form" id="register-candidate-form" novalidate>
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">ESPACE ÉTUDIANT</span>
+        <h2 id="register-candidate-title">Créez votre compte étudiant.</h2>
+        <p class="dialog-description">Un profil pour découvrir les opportunités au Cameroun.</p>
+        <div class="form-grid">
+          <label>Nom complet<input name="name" required maxlength="80" autocomplete="name" placeholder="Votre nom" /></label>
+          <label>Courriel<input name="email" required type="email" maxlength="120" autocomplete="email" placeholder="vous@exemple.cm" /></label>
+          <label class="full-field">Établissement<input name="school" required maxlength="120" placeholder="Votre établissement" /></label>
+          <label class="full-field">Téléphone mobile<input name="phone" required type="tel" inputmode="tel" maxlength="24" placeholder="+237 6XX XXX XXX" /></label>
+        </div>
+        <p class="local-data-notice"><span aria-hidden="true">i</span> Maquette uniquement : aucun compte réel ne sera créé et vos informations ne seront pas enregistrées.</p>
+        <p class="portal-feedback" role="status" hidden></p>
+        <button class="button button-dark button-full" type="submit">Créer mon compte <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <dialog class="app-dialog portal-register-dialog" id="register-employer-dialog" aria-labelledby="register-employer-title">
+      <form class="dialog-form portal-register-form" id="register-employer-form" novalidate>
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Fermer">×</button>
+        <span class="dialog-kicker">ESPACE ENTREPRISE</span>
+        <h2 id="register-employer-title">Inscrivez votre entreprise.</h2>
+        <p class="dialog-description">Préparez votre profil. Une vérification humaine sera nécessaire avant toute publication.</p>
+        <div class="form-grid">
+          <label class="full-field">Nom légal de l'entreprise<input name="company" required maxlength="120" autocomplete="organization" placeholder="Nom légal de l'entreprise" /></label>
+          <label>Courriel professionnel<input name="email" required type="email" maxlength="120" autocomplete="email" placeholder="nom@entreprise.cm" /></label>
+          <label>Site officiel<input name="website" required type="url" maxlength="180" placeholder="https://entreprise.cm" /></label>
+        </div>
+        <p class="local-data-notice"><span aria-hidden="true">i</span> Maquette uniquement : la création de compte, la validation de courriel et la vérification d'entreprise nécessitent un serveur.</p>
+        <p class="portal-feedback" role="status" hidden></p>
+        <button class="button button-dark button-full" type="submit">Continuer l'inscription <span aria-hidden="true">→</span></button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
