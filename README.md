@@ -21,9 +21,13 @@ Ouvrez ensuite <http://localhost:4173/?espace=etudiant&vue=connexion> ou <http:/
 
 ## Publier sur Netlify
 
-Le dépôt GitHub du projet est <https://github.com/ehounand-ai/emploi-cam>. Dans Netlify, choisissez **Add new site** puis **Import an existing project**, connectez GitHub et sélectionnez `ehounand-ai/emploi-cam`. Le fichier `netlify.toml` configure le dossier publié (`.`) ; aucun outil de compilation n'est nécessaire. Après le premier déploiement, Netlify fournira une adresse publique en `https://<nom-du-site>.netlify.app`.
+Le dépôt GitHub du projet est <https://github.com/elishamahounand10-cpu/emplois-cam>. Dans Netlify, choisissez **Add new site** puis **Import an existing project**, connectez GitHub et sélectionnez `elishamahounand10-cpu/emplois-cam`. Le fichier `netlify.toml` configure le dossier publié (`.`) ; aucun outil de compilation n'est nécessaire. Après le premier déploiement, Netlify fournira une adresse publique en `https://<nom-du-site>.netlify.app`.
 
 Les pages des deux espaces sont accessibles avec les paramètres `?espace=etudiant&vue=connexion` et `?espace=entreprise&vue=connexion`. L'adresse Netlify permettra d'y accéder depuis un téléphone ou un autre appareil connecté à Internet. Ce site est une maquette publique : ne publiez ni ne saisissez de vrais mots de passe, pièces d'identité ou informations personnelles. Une protection fiable par mot de passe doit être configurée côté hébergeur et ne peut pas être ajoutée uniquement dans les fichiers front-end.
+
+## Publier sur GitHub Pages
+
+Dans les paramètres du dépôt GitHub, ouvrez **Pages**, sélectionnez **Deploy from a branch**, puis choisissez la branche `main` et le dossier `/ (root)`, et enregistrez. Une fois la publication terminée, l'adresse du site sera <https://elishamahounand10-cpu.github.io/emplois-cam/>. Les pages de connexion seront disponibles en ajoutant `?espace=etudiant&vue=connexion` ou `?espace=entreprise&vue=connexion`. Les chemins des ressources et le démarrage des deux applications sont relatifs, pour fonctionner sous le chemin `/emplois-cam/`.
 
 ## Fonctionnalités de la maquette
 

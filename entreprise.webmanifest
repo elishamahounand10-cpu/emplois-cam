@@ -4,7 +4,7 @@
   "short_name": "Emploi Cam Recruteur",
   "description": "L'espace entreprise d'Emploi Cam pour vérifier son profil et proposer des offres.",
   "lang": "fr-CM",
-  "start_url": "./?espace=entreprise",
+  "start_url": "./?espace=entreprise&vue=connexion",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",

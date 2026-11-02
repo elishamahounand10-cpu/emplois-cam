@@ -4,7 +4,7 @@
   "short_name": "Emploi Cam Étudiant",
   "description": "La plateforme de mise en relation entre étudiants et entreprises au Cameroun.",
   "lang": "fr-CM",
-  "start_url": "./?espace=etudiant",
+  "start_url": "./?espace=etudiant&vue=connexion",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
